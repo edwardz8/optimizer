@@ -1,6 +1,6 @@
-# optimizer
+# rotorink optimizer
 
-> daily fantasy lineup optimizer
+> daily fantasy hockey lineup optimizer
 
 ## Build Setup
 

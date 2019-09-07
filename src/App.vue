@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <header>
+      <router-link to="/" class="link">
       <span>RotoRink Optimizer</span>
+      </router-link>
+      <router-link to="/list" class="link">Drag List</router-link>
     </header>
     <main>
       <router-view></router-view>
@@ -20,6 +23,11 @@ body {
   margin: 0;
 }
 
+.link {
+  text-decoration: none;
+  color: white;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,6 +37,7 @@ body {
 
 main {
   margin-top: 40px;
+  margin-left: 2rem;
 }
 
 header {
@@ -37,6 +46,7 @@ header {
   padding: 0 16px 0 24px;
   background-color: #35495E;
   color: #ffffff;
+  display: flex;
 }
 
 header span {
