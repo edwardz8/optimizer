@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <header>
-      <router-link to="/" class="link">
-      <span>RotoRink Optimizer</span>
+     <md-toolbar class="md-primary" md-elevation="1">
+      <div class="md-title" style="flex: 1"><router-link to="/">RotoRink Optimizer</router-link></div>
+      <router-link to="/list" class="link">
+      <md-button>DND List</md-button>
       </router-link>
-      <router-link to="/list" class="link">Drag List</router-link>
-    </header>
+    </md-toolbar>
+    
     <main>
       <router-view></router-view>
     </main>
@@ -23,40 +24,17 @@ body {
   margin: 0;
 }
 
+.md-theme-default a:not(.md-button) {
+  color: white;
+}
+
 .link {
   text-decoration: none;
   color: white;
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
 main {
   margin-top: 40px;
   margin-left: 2rem;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-  display: flex;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
 }
 </style>

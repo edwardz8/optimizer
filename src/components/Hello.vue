@@ -1,24 +1,167 @@
 <template>
-<div>
-  <h4>RotoRink Lineup Optimizer</h4>
-   <div v-for="stat of stats" :key="stat.id">
-      <p>
+<div class="wrapper">
+  <!-- <h2>RotoRink Lineup Optimizer</h2> -->
+  <div class="opti-container">
+  <div class="col-1">
+   <md-card v-for="stat of stats" :key="stat.id" class="list" md-with-hover>
+      <p class="player-name">
         {{ stat.fullName }} -
         <span>{{ stat.primaryPosition.name }} ({{ stat.primaryPosition.abbreviation }})</span>
       </p>
+        <md-button class="md-icon-button md-primary add-btn">
+        <md-icon>add</md-icon>
+      </md-button>
+    </md-card>
     </div>
+
+    <div class="col-2"> 
+      <md-card md-with-hover class="card">
+        <md-card-header class="card-heading">
+          <div class="md-title" style="flex: 1">My Lineups<span> (1/1)</span></div>
+           <md-button class="md-raised md-primary">
+              <md-icon>sports_hockey</md-icon>
+            Optimize</md-button>
+          <!-- <div class="md-subhead">(1/1)</div> -->
+        </md-card-header>
+
+        <md-list class="md-triple-line">
+      <md-list-item>
+        <div>C</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+      <md-list-item>
+        <div>C</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+      <md-list-item>
+        <div>W</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+      <md-list-item>
+        <div>W</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+      <md-list-item>
+        <div>W</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+      <md-list-item>
+        <div>W</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+      <md-list-item>
+        <div>D</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+      <md-list-item>
+        <div>D</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+      <md-list-item>
+        <div>G</div>
+
+        <div class="md-list-item-text">
+          <span></span>
+        </div>
+
+        <md-button class="md-icon-button md-list-action">
+          <md-icon class="md-primary">indeterminate_check_box</md-icon>
+        </md-button>
+      </md-list-item>
+
+      <md-divider class="md-inset"></md-divider>
+
+    </md-list>
+
+        <md-card-actions>
+          <md-button class="md-raised md-accent">Clear</md-button>
+          <md-button class="md-raised md-primary">
+              <md-icon>sports_hockey</md-icon>
+            Optimize</md-button>
+        </md-card-actions>
+    </md-card>
+    </div>
+  </div>
 </div>
 </template>
 
 <script>
 import axios from 'axios';
-import draggable from 'vuedraggable';
 
 export default {
   name: 'hello',
-  components: {
-    draggable
-  },
   data () {
     return {
       stats: [],
@@ -28,6 +171,7 @@ export default {
    created() {
     axios
       .get(`https://statsapi.web.nhl.com/api/v1/draft/prospects`)
+      // .get(`https://api.nhle.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=leagueId=133%20and%20gameTypeId=2%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019`)
       .then(res => {
         this.stats = res.data.prospects;
         console.log(res);
@@ -40,9 +184,34 @@ export default {
 </script>
 
 <style scoped>
-
-a {
-  color: #35495E;
+.opti-container {
+  display: flex;
+  justify-content: space-between;
+}
+.col-1 {
+  max-width: 20rem;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.player-name {
+  padding-right: 1.5rem;
+  padding-left: 1rem;
+}
+.col-2 {
+  max-width: 50rem;
+  min-width: 35rem;
+  margin-right: 2rem;
+  margin-top: 0;
+}
+.md-list-item-text {
+  padding-left: 4rem;
 }
 </style>
 
