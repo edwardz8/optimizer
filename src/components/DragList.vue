@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div class="row">
     <div class="col-3">
       <h3>Draggable 1</h3>

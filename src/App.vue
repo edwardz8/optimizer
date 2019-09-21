@@ -5,6 +5,9 @@
       <router-link to="/list" class="link">
       <md-button>DND List</md-button>
       </router-link>
+      <router-link to="/chart" class="link">
+      <md-button>Charts</md-button>
+      </router-link>
     </md-toolbar>
     
     <main>
