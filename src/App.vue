@@ -8,6 +8,12 @@
       <router-link to="/chart" class="link">
       <md-button>Charts</md-button>
       </router-link>
+      <router-link to="/admin" class="link">
+      <md-button>Admin</md-button>
+      </router-link>
+      <router-link to="/cart" class="link">
+      <md-button>Cart</md-button>
+      </router-link>
     </md-toolbar>
     
     <main>
@@ -34,10 +40,5 @@ body {
 .link {
   text-decoration: none;
   color: white;
-}
-
-main {
-  margin-top: 40px;
-  margin-left: 2rem;
 }
 </style>

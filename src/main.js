@@ -7,8 +7,6 @@ import 'vue-material/dist/theme/default-dark.css'
 
 Vue.use(VueMaterial)
 
-Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -1,8 +1,7 @@
 <template>
   <div class="wrapper">
-    <!-- <h2>RotoRink Lineup Optimizer</h2> -->
     <div class="opti-container">
-      <div class="col-1">
+      <div class="col-1 player-list">
         <md-card v-for="stat of stats" :key="stat.playerId" class="list" md-with-hover>
           <p class="player-name">
             {{ stat.playerName }} -
@@ -166,6 +165,7 @@ export default {
 .opti-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 .col-1 {
   max-width: 20rem;
@@ -182,6 +182,9 @@ export default {
 .player-name {
   padding-right: 1.5rem;
   padding-left: 1rem;
+}
+.player-list {
+  margin-left: 1rem;
 }
 .col-2 {
   max-width: 50rem;
