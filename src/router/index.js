@@ -12,8 +12,7 @@ import Edit from '@/components/admin/Edit'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'Hello',
       component: Hello
@@ -28,24 +27,23 @@ export default new Router({
       name: 'Admin',
       component: Index,
 
-        // Child routes
-        children: [
-          {
-            path: 'new',
-            name: 'New',
-            component: New
-          },
-          {
-            path: '',
-            name: 'Products',
-            component: Products
-          },
-          {
-            path: 'edit/:id',
-            name: 'Edit',
-            component: Edit
-          }
-        ]
+      // Child routes
+      children: [{
+          path: 'new',
+          name: 'New',
+          component: New
+        },
+        {
+          path: '',
+          name: 'Products',
+          component: Products
+        },
+        {
+          path: 'edit/:id',
+          name: 'Edit',
+          component: Edit
+        }
+      ]
     },
     {
       path: '/cart',

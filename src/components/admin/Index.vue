@@ -8,6 +8,9 @@
       <router-link to="/admin/new" class="link">
       <md-button>New Product</md-button>
       </router-link>
+      <router-link to="/edit/:id" class="link">
+      <md-button>Edit Products</md-button>
+      </router-link>
     </md-toolbar>
 
     <div class="admin-container">
